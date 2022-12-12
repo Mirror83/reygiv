@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  color: darkgreen;
+}
+
+h2 {
+  color: darkgreen;
+}
+
+.greet_user {
+  margin: auto;
+}
+
+#username {
+  color: gold;
+}
+
+.greet_user .container {
+  width: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.booking-container {
+  height: 20vh;
+  margin: 10px;
+  background-position: center;
+  background-size: cover;
+  width: 40vw;
+  border: 2px solid darkgreen;
+  padding: 10px;
+  border-radius: 5px;
+}

@@ -1,0 +1,227 @@
+.description {
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  place-items: center;
+}
+
+.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 350px));
+  gap: 15px 15px;
+}
+
+.properties {
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.26);
+  transition: transform 0.6s ease;
+  overflow: hidden;
+}
+
+.properties:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.properties img {
+  width: 80%;
+}
+
+.properties h3 {
+  opacity: 0;
+  transition: opacity 0.6s ease-in;
+  text-align: end;
+}
+
+.properties:hover h3 {
+  opacity: 1;
+}
+
+.prop1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-row: 1/3;
+}
+
+.prop2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: 2/3;
+  grid-row: 2/4;
+}
+
+.prop3 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: 1/2;
+  grid-row: 3/5;
+}
+
+.prop4 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: 2/4;
+  grid-row: 1/2;
+}
+
+.prop5 {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.prop6 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* grid-column: 3/4;
+    grid-row: 3/5; */
+}
+
+.prop7 {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.prop8 {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.prop9 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: 1/3;
+}
+
+.prop10 {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.prop11 {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.prop12 {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.properties .text-content * {
+  opacity: 0;
+}
+
+.text-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border: inherit;
+  padding: 10px;
+  transition: all 0.6s ease-out;
+}
+.text-content div,
+.text-content a {
+  width: 100%;
+}
+.text-content .name {
+  font-size: 1.3rem;
+}
+
+.properties:hover .text-content {
+  backdrop-filter: blur(1px);
+  background: rgba(0, 0, 0, 0.26);
+}
+
+.properties:hover .text-content * {
+  opacity: 1;
+  color: white;
+}
+
+@media screen, (min-width: 1045px) {
+  .prop2 {
+    grid-column: 2/3;
+    grid-row: 2/4;
+  }
+  .prop6 {
+    grid-column: 5/6;
+    grid-row: 1/3;
+  }
+  .prop8 {
+    grid-row: 2/3;
+    grid-column: 3/5;
+  }
+  .prop9 {
+    grid-column: 3/5;
+    grid-row: 3/4;
+  }
+  .prop10 {
+    grid-row: 4/5;
+    grid-column: 2/4;
+  }
+  .prop11 {
+    grid-row: 4/5;
+    grid-column: 4/5;
+  }
+  .prop12 {
+    grid-row: 3/5;
+  }
+}
+
+@media screen, (max-width: 1045px) {
+  .grid-view {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(400px, 1fr));
+  }
+  .prop1 {
+    grid-row: 1/3;
+  }
+  .prop2 {
+    grid-column: 2/3;
+    grid-row: 2/4;
+  }
+  .prop3 {
+    grid-column: 1/2;
+    grid-row: 3/5;
+  }
+  .prop4 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  .prop5 {
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+  .prop6 {
+    grid-column: 2/3;
+    grid-row: 8/10;
+  }
+  .prop7 {
+    grid-column: 1/2;
+    grid-row: 9/10;
+  }
+  .prop8 {
+    grid-column: 1/3;
+    grid-row: 6/8;
+  }
+  .prop9 {
+    grid-column: 1/2;
+    grid-row: 8/9;
+  }
+  .prop10 {
+    grid-column: 2/3;
+    grid-row: 4/5;
+  }
+  .prop11 {
+    grid-column: 2/3;
+    grid-row: 5/6;
+  }
+  .prop12 {
+    grid-column: 1/3;
+    grid-row: 10/11;
+  }
+}
