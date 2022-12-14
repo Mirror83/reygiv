@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   <section class="bookings">
     <h2>Bookings</h2>
-    <div class="booked">
+    <div class="booked-wrapper">
       <?php
       $query = "SELECT p.property_name, b.booking_id, b.property_id, classification, time_booked, p.image_url
     FROM properties p
@@ -100,10 +100,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if ($row) {
         echo <<<html
        <div class='booking-container' style="background-image: url({$row['image_url']}.jpg);">
-       <p>{$row['property_name']}</p>
-       <p>{$row['classification']}</p>
-       <p>{$row['time_booked']}</p>
-       <a href='delete_booking.php?booking_id={$row['booking_id']}&property_id={$row['property_id']}' class='btns'><button>Delete booking</button></a>
+        <div class='text-content'>
+          <p>{$row['property_name']}</p>
+          <p>{$row['classification']}</p>
+          <p>Booked on: {$row['time_booked']}</p>
+          <a href='#' class='btns'>View more details</a>
+          <a href='delete_booking.php?booking_id={$row['booking_id']}&property_id={$row['property_id']}' class='btns delete'>Delete booking</a>
+        </div>
        </div>
       html;
       } else {
@@ -111,17 +114,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
       ?>
     </div>
-    <?php
-    echo "<a href='properties.php' class='btns'>
-      <button>Go to properties</button>
-    </a>";
-    ?>
-  </section>
 
+    <a href='properties.php' class='properties-link'>
+      Go to properties
+    </a>
+
+  </section>
+  <!-- <hr> -->
   <section class="basket">
     <h2>Basket</h2>
-
-    <?php
+    <div class="basket-wrapper">
+      <?php
     $query = "SELECT p.property_name, b.basket_entry_id, b.property_id, classification, date_created, p.image_url
     FROM properties p
     JOIN basket b
@@ -136,19 +139,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($row) {
       echo <<<html
        <div class='booking-container' style="background-image: url({$row['image_url']}.jpg);">
-       <p>{$row['property_name']}</p>
-       <p>{$row['classification']}</p>
+        <div class='text-content'>
+          <p>{$row['property_name']}</p>
+          <p>{$row['classification']}</p>
+          <a href='#' class='btns'>View more details</a>
+          <a href='#' class='btns'>Book</a>
+          <a href='#' class='btns delete'>Remove from basket</a>
+        </div>
        </div>
       html;
     } else {
       echo "<div>You currently don't have any basket entries</div>";
     }
-
-
-
     ?>
-    <a href="basket.php">
-      <button>View more</button>
+    </div>
+    <a href='properties.php' class='properties-link'>
+      Go to properties
     </a>
   </section>
 

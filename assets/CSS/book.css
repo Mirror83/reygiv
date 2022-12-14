@@ -12,6 +12,8 @@ h1 {
   margin-inline: auto;
   border: 0.5px solid black;
   --border-radius: 10px;
+  margin-bottom: 70px;
+  margin-top: 30px;
 }
 
 .property-picture {
@@ -27,8 +29,16 @@ h1 {
   margin-left: 0;
 }
 
-button {
-  margin-left: 0;
+#book_btn:active,
+#basket_btn:active {
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.534);
+  animation: shadow 0.7s ease-in-out;
+}
+
+@keyframes shadow {
+  to {
+    box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.24);
+  }
 }
 
 /* .property-container {

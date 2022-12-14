@@ -1,39 +1,137 @@
-/* * {
+* {
   box-sizing: border-box;
-} */
+}
 
 h1 {
   text-align: center;
-  color: darkgreen;
+  color: black;
 }
 
 h2 {
-  color: darkgreen;
+  color: black;
+  font-weight: 600;
 }
 
-.greet_user {
-  margin: auto;
+.greet_user h2 {
+  font-weight: 400;
 }
 
 #username {
-  color: gold;
+  color: var(--light-blue);
+  font-weight: 400;
 }
 
 .greet_user .container {
   width: auto;
+  margin-left: 2vw;
 }
 
 a {
   text-decoration: none;
 }
 
+.bookings,
+.basket {
+  position: relative;
+  --border: 2px solid grey;
+  min-height: 150px;
+  border: var(--border);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 50px;
+  max-width: 70vw;
+
+  /* margin-left: 10px; */
+}
+.bookings h2,
+.basket h2 {
+  margin-left: 20px;
+  border-bottom: var(--border);
+}
+
+.booked-wrapper,
+.basket-wrapper {
+  display: flex;
+  min-height: 80%;
+  margin-left: 20px;
+  margin-bottom: 50px;
+  gap: 20px;
+}
+
 .booking-container {
-  height: 20vh;
-  margin: 10px;
+  height: 45vh;
   background-position: center;
   background-size: cover;
-  width: 40vw;
-  border: 2px solid darkgreen;
-  padding: 10px;
+  width: 30vw;
+  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.3);
+  --transition: all ease-in 0.3s;
+  transition: var(--transition);
   border-radius: 5px;
+  color: white;
+}
+
+.text-content p {
+  width: 100%;
+  margin-block: 2px;
+}
+
+.text-content {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+  transition: var(--transition);
+  padding-left: 10px;
+}
+
+.text-content p:nth-child(1) {
+  font-size: 1.7rem;
+}
+
+.text-content a {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 5px;
+  width: 150px;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  display: block;
+  margin-right: 100px;
+}
+
+.text-content a.delete {
+  background-color: var(--dark-pink);
+  color: white;
+}
+
+.text-content > * {
+  opacity: 0;
+}
+
+.booking-container:hover {
+  scale: 1.05;
+}
+
+.booking-container:hover .text-content {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.booking-container:hover .text-content > * {
+  opacity: 1;
+}
+.properties-link {
+  position: absolute;
+  bottom: 10px;
+  margin-left: 20px;
+  text-decoration: initial;
+}
+
+.btns {
+  margin-left: 0px;
+}
+
+hr {
+  margin-bottom: 50px;
 }

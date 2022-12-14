@@ -97,13 +97,14 @@ $row = mysqli_fetch_assoc($result);
             </div>
         </div>
     </div>
+    <?php include "footer.html"?>
     <?php } else { ?>
     <div class='error-state-container'>
         <h2>We could not find the requested property.</h2>
         <a href='properties.php'>Back to properties</a>
     </div>
     <?php
-        die(); }?>;
+        die(); }?>
 </body>
 
 </html>

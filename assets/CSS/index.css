@@ -183,6 +183,7 @@ button:active {
 
 #boxes h3 {
   font-size: 2rem;
+  font-weight: 600;
 }
 
 #boxes p {
@@ -191,7 +192,7 @@ button:active {
 
 footer {
   padding: 20px;
-  margin-top: 20px;
+  margin-top: 50px;
   color: #ffffff;
   background: var(--main-linear-gradient);
   text-align: center;
@@ -220,6 +221,7 @@ footer #contacts .contacts-wrapper div {
 }
 
 footer img {
+  box-sizing: content-box;
   height: 30px;
   padding: 10px;
 }
