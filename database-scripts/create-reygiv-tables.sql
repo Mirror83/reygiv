@@ -1,5 +1,4 @@
-DROP DATABASE IF EXISTS reygiv;
-CREATE DATABASE reygiv;
+USE reygiv;
 
 DROP TABLE IF EXISTS users;
 CREATE TABLE users(
@@ -38,7 +37,7 @@ VALUES ("Friendly Meadows", "1 Bedroom", "Juja", "Fresh water is available", "./
 ("Savannah Hostel", "Bedsitter", "Juja", "Mall nearby", "./images/image2", 5000, 1),
 ("Dope Living", "2 Bedroom", "Allsops", "Close proximity to Garden City Mall", "./images/image3", 15000, 5),
 ("Mlandizi", "1 Bedroom", "Thika", "Swimming pool available", "./images/image4", 9000, 3),
-("Dope Living", "2 Bedroom", "Allsops", "Close proximity to Garden City Mall", "./images/image5", 15000, 5),
+("Cadbury", "2 Bedroom", "Rongai", "Close proximity to MMU", "./images/image5", 13000, 1),
 ("Nyumbani Apartments", "Single Rooms", "Buruburu", "Close proximity to The Point Mall", "./images/image6", 5000, 0),
 ("Tora Homes", "3 Bedroom", "Parklands", "Spacious house", "./images/image7", 25000, 7),
 ("Lolianda", "Bedsitter", "Baba Dogo", "Complimentary Wi-Fi", "./images/image8", 4000, 1),
@@ -56,6 +55,15 @@ CREATE TABLE bookings(
     property_id INT NOT NULL,
     time_booked DATE NOT NULL,
     PRIMARY KEY(booking_id)
+);
+
+DROP TABLE IF EXISTS basket;
+CREATE TABLE basket(
+	basket_entry_id INT NOT NULL AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    property_id INT NOT NULL,
+    date_created DATE NOT NULL,
+    PRIMARY KEY(basket_entry_id)
 );
 
 -- INSERT INTO bookings(user_id, property_id, time_booked)
