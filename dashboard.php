@@ -18,6 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       if (isset($row)) {
         $_SESSION["username"] = $row["full_name"];
+        
+        $_SESSION["hasBooked"] = $row["has_booked"];
       } else {
         header("Location: login.php?message=Invalid username, email or password");
       }
@@ -76,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <h2 class="user">
         <span class="greet"></span>
         <span id="username">
-          <?php echo $_SESSION["username"] ?>
+          <?php echo $_SESSION["username"]?>
         </span>
       </h2>
     </div>

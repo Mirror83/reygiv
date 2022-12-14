@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS reygiv;
+CREATE DATABASE reygiv;
 USE reygiv;
 
 DROP TABLE IF EXISTS users;
@@ -10,12 +12,12 @@ CREATE TABLE users(
     user_password VARCHAR(100) NOT NULL,
     gender VARCHAR(20) NOT NULL,
     time_created DATE NOT NULL,
-    
+    has_booked TINYINT NOT NULL DEFAULT 0, -- IF the user has booked, this is set to one.
     PRIMARY KEY(user_id)
 );
 
 INSERT INTO users(full_name, user_name, email, phone_number, user_password, gender, time_created)
-VALUES ("Administrator", "admin", "admin@reygiv.co.ke", "0722419556" ,"admin", "Female", current_date()),
+VALUES ("Named", "Johnny Bravo", "johnnybravo@gmail.com", "0712409452" ,"network", "Male", current_date()),
 ("Farouz Lima", "joyboy", "onejoyboy@gmail.com", "0712291015" ,"gear5", "Male", current_date());
 
 

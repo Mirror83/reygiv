@@ -1,17 +1,17 @@
 h1 {
   text-align: center;
-  color: darkgreen;
-  font-style: italic;
 }
 
 .property-container {
   display: grid;
   grid-template-columns: repeat(2, minmax(400px, 1fr));
   gap: 20px;
-  width: 70%;
+  max-width: 80%;
+  min-height: 60vh;
   margin-inline: auto;
   border: 0.5px solid black;
   --border-radius: 10px;
+  border-radius: var(--border-radius);
   margin-bottom: 70px;
   margin-top: 30px;
 }
@@ -19,6 +19,7 @@ h1 {
 .property-picture {
   background-size: cover;
   background-repeat: no-repeat;
+  border-radius: var(--border-radius);
 }
 
 .buttons {
@@ -27,12 +28,19 @@ h1 {
   width: 100%;
   margin-bottom: 20px;
   margin-left: 0;
+  flex-wrap: wrap;
+}
+
+.error {
+  width: 100%;
+  color: red;
+  margin-bottom: 10px;
 }
 
 #book_btn:active,
 #basket_btn:active {
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.534);
-  animation: shadow 0.7s ease-in-out;
+  animation: shadow 0.3s ease-in-out 2 alternate;
 }
 
 @keyframes shadow {

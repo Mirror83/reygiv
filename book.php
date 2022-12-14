@@ -79,7 +79,9 @@ $row = mysqli_fetch_assoc($result);
             </div>
             <div class="buttons">
                 <?php
-                if ($row["available_rooms"] > 0) {
+                 if ($_SESSION["hasBooked"] == 1) {
+                    echo "<div class='error'>You have already booked a property!</div>";
+                } else if ($row["available_rooms"] > 0) {
                     echo <<<html
                     <form method="POST" action="action_book.php">
                         <input type="hidden" name="property_id" value="{$row["property_id"]}">
@@ -87,7 +89,7 @@ $row = mysqli_fetch_assoc($result);
                     </form>
                 html;
                 } else {
-                    echo "<div class='full'>No more openings are currently available.</div>";
+                    echo "<div class='error'>No more openings are currently available.</div>";
                 }
                 ?>
                 <form method="POST" action="action_basket.php">

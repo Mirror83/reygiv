@@ -1,5 +1,18 @@
 <?php
+session_start();
 require "connect.php";
+$query = "UPDATE users 
+    SET has_booked = 0
+    WHERE full_name = '{$_SESSION['username']}'";
+
+$result = mysqli_query($mysqli, $query);
+
+if ($result) {
+    $_SESSION["hasBooked"] = 0;
+} else {
+    die("Failed to update the user's booking status.");
+}
+
 $query = "DELETE FROM bookings WHERE 
 booking_id = {$_POST["booking_id"]}";
 
