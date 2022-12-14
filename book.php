@@ -53,8 +53,7 @@ $row = mysqli_fetch_assoc($result);
     </div>
     <h1>Property details</h1>
     <div class="property-container">
-        <div class="property_picture">
-            <img src="<?php echo $row["image_url"] ?>.jpg" alt="">
+        <div class="property-picture" style="background-image: url(<?php echo $row["image_url"] ?>.jpg)">
         </div>
         <div class="details">
             <p> <b>Name:</b>

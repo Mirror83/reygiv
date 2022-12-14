@@ -68,7 +68,7 @@
                                 <div class="location">{$row['property_location']}</div>
                                 <div class="price">Ksh.{$row['rent']}</div>
                                 <a href="book.php?property_id={$row['property_id']}">
-                                    <div>View more details</div>
+                                    View more details
                                 </a>
                             </div>       
                         </div>
