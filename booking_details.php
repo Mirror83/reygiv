@@ -80,24 +80,9 @@ $row = mysqli_fetch_assoc($result);
                 </p>
             </div>
             <div class="buttons">
-                <?php
-                 if ($_SESSION["hasBooked"] == 1) {
-                    echo "<div class='error'>You have already booked a property!</div>";      
-                } else if ($row["available_rooms"] > 0) {
-                    echo <<<html
-                    <form method="POST" action="action_book.php">
-                        <input type="hidden" name="property_id" value="{$row["property_id"]}">
-                        <button id="book_btn">Book</button>
-                    </form>
-                html;
-                } else {
-                    echo "<div class='error'>No more openings are currently available.</div>";
-                }
-                ?>
-                <?php echo "<a 
-                href='action_remove_basket.php?booking_id={$_GET['basket_entry_id']}&property_id={$row['property_id']}'
-                class='btns delete'>Remove from basket</a>
-                "?>
+                <?php echo "  
+               <a href='delete_booking.php?booking_id={$_GET['booking_id']}&property_id={$row['property_id']}' 
+               class='btns delete'>Delete booking</a>"?>
             </div>
         </div>
     </div>

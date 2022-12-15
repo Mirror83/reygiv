@@ -100,7 +100,7 @@ a {
   font-size: 0.8rem;
   border-radius: 5px;
   display: block;
-  margin-right: 100px;
+  margin-right: 150px;
 }
 
 .text-content a.delete {
@@ -129,8 +129,11 @@ a {
   text-decoration: initial;
 }
 
-.btns {
-  margin-left: 0px;
+button {
+  padding: 5px;
+  width: 150px;
+  margin-left: 0;
+  background: var(--light-blue);
 }
 
 hr {

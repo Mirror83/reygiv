@@ -24,9 +24,8 @@ body {
   width: 80%;
   margin: auto;
 }
-
 .top-content {
-  background-image: url("../images/background_home_2.jpg");
+  background-image: url("../../images/image7.jpg");
   background-size: cover;
 }
 
@@ -47,9 +46,10 @@ ul {
 
 header {
   background: var(--main-linear-gradient);
-  opacity: 0.9;
   color: #ffffff;
   padding: 15px;
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.3), 0px 1px 10px rgba(0, 0, 0, 0.3);
+
   /* border-bottom: white 3px solid; */
 }
 
@@ -117,11 +117,11 @@ nav a {
   color: black;
   font-size: 55px;
   margin-bottom: 50px;
-  line-height: 1em;
 }
 
 #showcase p {
   font-size: 20px;
+  line-height: 0.6em;
 }
 
 #newsletter {
@@ -253,7 +253,7 @@ footer h4 {
     top: 70px;
     gap: 0;
     flex-direction: column;
-    background-color: white;
+    background-color: var(--light-blue);
     width: 100%;
     text-align: center;
     transition: 0.3s;

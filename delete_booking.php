@@ -17,14 +17,17 @@ $row = mysqli_fetch_assoc($result);
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/CSS/delete.css">
   <title>Reygiv | Delete Booking</title>
 </head>
 
 <body>
   <div class="container">
-    <h2>Are you sure you want to delete
-      <?php echo $row["property_name"] ?> from your bookings?
-    </h2>
+    <p>Are you sure you want to delete
+      <span>
+        <?php echo $row["property_name"] ?>
+      </span> from your bookings?
+    </p>
     <form method="POST" action="action_delete.php">
       <input type="hidden" name="property_id" value="<?php echo $_GET["property_id"] ?>" />
       <input type="hidden" name="booking_id" value="<?php echo $_GET["booking_id"] ?>" />

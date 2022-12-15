@@ -4,10 +4,12 @@ session_start();
 require "connect.php";
 
 
-$query = "DELETE FROM basket WHERE property_id = {$_POST['property_id']}";
+$query = "DELETE FROM basket WHERE property_id = {$_GET['property_id']} AND user_id = {$_SESSION['userID']}";
 
 $result = mysqli_query($mysqli, $query);
 
 if ($result) {
-    echo "User {$_SESSION['username']} removed property_id {$_POST['property_id']} from basket";
+    header("Location: dashboard.php");
+} else {
+    echo "Could not remove basket entry";
 }

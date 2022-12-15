@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       if (isset($row)) {
         $_SESSION["username"] = $row["full_name"];
+        $_SESSION["userID"] = $row["user_id"];
         
         $_SESSION["hasBooked"] = $row["has_booked"];
       } else {
@@ -106,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <p>{$row['property_name']}</p>
           <p>{$row['classification']}</p>
           <p>Booked on: {$row['time_booked']}</p>
-          <a href='#' class='btns'>View more details</a>
+          <a href='booking_details.php?property_id={$row['property_id']}&booking_id={$row['booking_id']}' class='btns'>View more details</a>
           <a href='delete_booking.php?booking_id={$row['booking_id']}&property_id={$row['property_id']}' class='btns delete'>Delete booking</a>
         </div>
        </div>
@@ -144,9 +145,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class='text-content'>
           <p>{$row['property_name']}</p>
           <p>{$row['classification']}</p>
-          <a href='#' class='btns'>View more details</a>
-          <a href='#' class='btns'>Book</a>
-          <a href='#' class='btns delete'>Remove from basket</a>
+          <a href='basket_details.php?property_id={$row['property_id']}&basket_entry_id={$row['basket_entry_id']}' class='btns'>View more details</a>
+          <form method="POST" action="action_book.php">
+          <input type="hidden" name="property_id" value="{$row["property_id"]}">
+          <button id="book_btn">Book</button>
+      </form>        
+        <a href='action_remove_basket.php?property_id={$row['property_id']}' class='btns delete'>Remove from basket</a>
         </div>
        </div>
       html;

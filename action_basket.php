@@ -15,15 +15,5 @@ $query = "INSERT INTO basket(user_id, property_id, date_created)
 $result = mysqli_query($mysqli, $query);
 
 if ($result) {
-    $query2 = "SELECT property_name FROM properties
-    WHERE property_id = {$_POST['property_id']}";
-    $result2 = mysqli_query($mysqli, $query2);
-    $row = mysqli_fetch_assoc($result2);
-    echo "<p>{$row['property_name']} added to basket</p>";
-    echo "<a href='dashboard.php'>Back to dashboard</a>";
+    header("Location: dashboard.php");
 }
-
-
-
-
-echo "User {$_SESSION['username']} added property_id {$_POST['property_id']} to basket";

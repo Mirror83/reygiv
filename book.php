@@ -12,6 +12,8 @@ $query = <<<query
 $result = mysqli_query($mysqli, $query);
 $row = mysqli_fetch_assoc($result);
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -21,8 +23,8 @@ $row = mysqli_fetch_assoc($result);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/CSS/book.css">
     <link rel="stylesheet" href="./assets/CSS/index.css">
+    <link rel="stylesheet" href="./assets/CSS/book.css">
     <title>Book/Add to Basket</title>
 </head>
 
@@ -80,7 +82,7 @@ $row = mysqli_fetch_assoc($result);
             <div class="buttons">
                 <?php
                  if ($_SESSION["hasBooked"] == 1) {
-                    echo "<div class='error'>You have already booked a property!</div>";
+                    echo "<div class='error'>You have already booked a property!</div>";      
                 } else if ($row["available_rooms"] > 0) {
                     echo <<<html
                     <form method="POST" action="action_book.php">
