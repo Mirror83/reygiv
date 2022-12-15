@@ -35,7 +35,7 @@ CREATE TABLE properties(
 );
 
 INSERT INTO properties(property_name, classification, property_location, property_description, image_url, rent, available_rooms)
-VALUES ("Friendly Meadows", "1 Bedroom", "Juja", "Fresh water is available", "./images/image1", 8000, 2),
+VALUES ("Friendly Meadows", "1 Bedroom", "Juja", "Fresh water is available", "./images/image1", 8000, 0),
 ("Savannah Hostel", "Bedsitter", "Juja", "Mall nearby", "./images/image2", 5000, 1),
 ("Dope Living", "2 Bedroom", "Allsops", "Close proximity to Garden City Mall", "./images/image3", 15000, 5),
 ("Mlandizi", "1 Bedroom", "Thika", "Swimming pool available", "./images/image4", 9000, 3),
